@@ -1,0 +1,19 @@
+{
+  "vendors": [
+    {
+      "id": 5,
+      "name": "Bob",
+      "address": { "city": "Warszawa" }
+    },
+    {
+      "id": 11,
+      "name": "Mateusz",
+      "address": { "city": "Krakow" }
+    },
+    {
+      "id": 9,
+      "name": "Adrian",
+      "address": { "city": "Berlin" }
+    }
+  ]
+}
