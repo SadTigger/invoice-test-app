@@ -1,4 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { LocalStorageService } from './services/local-storage.service';
 import { InvoiceService } from 'src/app/services/invoice.service';
 import { VendorService } from 'src/app/services/vendor.service';
@@ -7,6 +12,7 @@ import { VendorService } from 'src/app/services/vendor.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'invoice-test-app';

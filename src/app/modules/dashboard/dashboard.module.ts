@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard.component';
 import { InvoiceTableComponent } from './components/invoice-table/invoice-table.component';
 import { InvoicePreviewComponent } from './components/invoice-preview/invoice-preview.component';
 import { NewInvoiceComponent } from './components/new-invoice/new-invoice.component';
+import { HeaderComponent } from './components/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -15,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     InvoiceTableComponent,
     InvoicePreviewComponent,
     NewInvoiceComponent,
+    HeaderComponent,
   ],
   imports: [
     CommonModule,
