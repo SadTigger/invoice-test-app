@@ -1,0 +1,62 @@
+<section class="login">
+  <mat-card class="login-card">
+    <div class="login-form-container">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <div mat-dialog-content>
+            <mat-form-field appearance="fill">
+              <mat-label>Login</mat-label>
+              <input
+                type="text"
+                matInput
+                formControlName="userLogin"
+                required="true" />
+              <span
+                class="alert"
+                *ngIf="
+                  loginForm.controls['userLogin'].invalid &&
+                  loginForm.controls['userLogin']?.touched
+                ">
+                Please, specify the field
+              </span>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Password</mat-label>
+              <input
+                type="password"
+                matInput
+                formControlName="userPassword"
+                required="true" />
+              <span
+                class="alert"
+                *ngIf="
+                  loginForm.controls['userPassword'].invalid &&
+                  loginForm.controls['userPassword']?.touched
+                ">
+                Please, specify the field
+              </span>
+            </mat-form-field>
+          </div>
+          <mat-card-actions>
+            <button
+              type="submit"
+              mat-button
+              class="login-btn"
+              [disabled]="!loginForm.valid">
+              Login
+            </button>
+            <div class="cheat-panel">
+              <button type="button" mat-button (click)="loginAsAdmin()">
+                Sign In as Admin
+              </button>
+              <button type="button" mat-button (click)="loginAsGuest()">
+                Sign In as Guest
+              </button>
+            </div>
+          </mat-card-actions>
+        </div>
+      </form>
+    </div>
+  </mat-card>
+</section>

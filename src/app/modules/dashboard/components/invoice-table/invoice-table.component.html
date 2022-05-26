@@ -1,15 +1,21 @@
-<button (click)="openAddInvoiceDialog()">Add invoice</button>
-
-<div class="container">
-  <mat-form-field appearance="fill">
-    <mat-select #matRef (selectionChange)="onChange($event.value)">
-      <mat-option [value]="defaultMatSelect"></mat-option>
-      <mat-option *ngFor="let vendor of vendorList$ | async" [value]="vendor">{{
-        vendor.name
-      }}</mat-option>
-    </mat-select>
-  </mat-form-field>
+<div class="controls">
+  <ng-container *ngIf="(isGuest$ | async) !== true">
+    <button (click)="openAddInvoiceDialog()">Add invoice</button>
+  </ng-container>
+  <div class="vendor-list">
+    <mat-form-field appearance="fill">
+      <mat-select #matRef (selectionChange)="onChange($event.value)">
+        <mat-option [value]="defaultMatSelect"></mat-option>
+        <mat-option
+          *ngFor="let vendor of vendorList$ | async"
+          [value]="vendor"
+          >{{ vendor.name }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+  </div>
 </div>
+
 <table mat-table [dataSource]="dataSource">
   <ng-container matColumnDef="number">
     <th mat-header-cell *matHeaderCellDef>No.</th>

@@ -17,6 +17,7 @@ import { InvoicePreviewComponent } from '../invoice-preview/invoice-preview.comp
 import { NewInvoiceComponent } from '../new-invoice/new-invoice.component';
 import { Subject, Observable } from 'rxjs';
 import { tap, takeUntil, take } from 'rxjs/operators';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-invoice-table',
@@ -29,6 +30,8 @@ export class InvoiceTableComponent implements OnInit, OnDestroy {
 
   dataSource = new MatTableDataSource<Invoice>();
 
+  isGuest$ = this.auth.isGuest();
+
   private destroy$ = new Subject();
 
   vendorList$ = this.vendorService.getVendorList();
@@ -40,6 +43,7 @@ export class InvoiceTableComponent implements OnInit, OnDestroy {
   @ViewChild('matRef') matRef!: MatSelect;
 
   constructor(
+    private auth: AuthService,
     private vendorService: VendorService,
     private invoiceService: InvoiceService,
     public dialog: MatDialog
