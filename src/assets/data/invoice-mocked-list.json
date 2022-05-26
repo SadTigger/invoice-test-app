@@ -1,0 +1,64 @@
+{
+  "invoices": [
+    {
+      "number": 1,
+      "date_of_issue": "2022-05-23",
+      "vendor": {
+        "id": 5,
+        "name": "Bob",
+        "address": { "city": "Warszawa" }
+      },
+      "invoice_amount": 999
+    },
+    {
+      "number": 2,
+      "date_of_issue": "2022-05-23",
+      "vendor": {
+        "id": 5,
+        "name": "Bob",
+        "address": { "city": "Warszawa" }
+      },
+      "invoice_amount": 999
+    },
+    {
+      "number": 3,
+      "date_of_issue": "2022-05-21",
+      "vendor": {
+        "id": 11,
+        "name": "Mateusz",
+        "address": { "city": "Krakow" }
+      },
+      "invoice_amount": 999
+    },
+    {
+      "number": 5,
+      "date_of_issue": "2022-05-25",
+      "vendor": {
+        "id": 11,
+        "name": "Mateusz",
+        "address": { "city": "Krakow" }
+      },
+      "invoice_amount": 999
+    },
+    {
+      "number": 13,
+      "date_of_issue": "2021-02-21",
+      "vendor": {
+        "id": 9,
+        "name": "Adrian",
+        "address": { "city": "Berlin" }
+      },
+      "invoice_amount": 789787
+    },
+    {
+      "number": 51,
+      "date_of_issue": "2022-08-01",
+      "vendor": {
+        "id": 9,
+        "name": "Adrian",
+        "address": { "city": "Berlin" }
+      },
+      "invoice_amount": 999784659
+    }
+  ]
+}

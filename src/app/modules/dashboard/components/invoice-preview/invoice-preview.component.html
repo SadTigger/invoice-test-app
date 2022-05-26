@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Invoice № {{ data.number }}</h1>
+<div mat-dialog-content>
+  <div class="date">Date: {{ data.date_of_issue | date }}</div>
+  <div class="amount">Amount: {{ data.invoice_amount | currency: 'PLN' }}</div>
+  <div class="vendor">Vendor {{ data.vendor.name }}</div>
+</div>
+
+<div mat-dialog-actions>
+  <button type="reset" mat-button (click)="onNoClick()">Close</button>
+</div>

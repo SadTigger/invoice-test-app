@@ -1,0 +1,45 @@
+<h1 mat-dialog-title>New Invoice</h1>
+<form [formGroup]="invoiceForm" (ngSubmit)="onSave()">
+  <div mat-dialog-content>
+    <mat-form-field appearance="fill">
+      <mat-label>Date of invoice</mat-label>
+      <input type="date" matInput formControlName="date" required="true" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Invoice vendor</mat-label>
+      <mat-select formControlName="vendor" required="true">
+        <mat-option
+          *ngFor="let vendor of vendorList$ | async"
+          [value]="vendor"
+          >{{ vendor.name }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Invoice №</mat-label>
+      <input
+        type="number"
+        min="0"
+        matInput
+        formControlName="invoice_number"
+        required="true" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Invoice amount</mat-label>
+      <input
+        type="number"
+        min="0"
+        matInput
+        formControlName="invoice_amount"
+        required="true" />
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button type="submit" [disabled]="invoiceForm.invalid">
+      Save
+    </button>
+    <button mat-button type="reset" mat-dialog-close (click)="onCancel()">
+      Cancel
+    </button>
+  </div>
+</form>
