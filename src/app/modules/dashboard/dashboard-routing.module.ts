@@ -7,17 +7,23 @@ import { NoAuthGuard } from 'src/app/guards/no-auth.guard';
 const routes: Routes = [
   {
     path: '',
-    canLoad: [NoAuthGuard],
+    canActivate: [NoAuthGuard],
     component: DashboardComponent,
     children: [
+      {
+        path: '',
+        redirectTo: 'invoices',
+        pathMatch: 'full',
+      },
       {
         path: 'invoices',
         component: InvoiceTableComponent,
       },
       {
-        path: '**',
-        redirectTo: 'invoices',
-        pathMatch: 'full',
+        path: 'vendors',
+        canActivate: [NoAuthGuard],
+        loadChildren: () =>
+          import('./../vendors/vendors.module').then(m => m.VendorsModule),
       },
     ],
   },

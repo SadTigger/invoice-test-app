@@ -1,0 +1,29 @@
+<form [formGroup]="vendorForm" (ngSubmit)="onSave()">
+  <div mat-dialog-content>
+    <mat-form-field appearance="fill">
+      <mat-label>Vendor id</mat-label>
+      <input
+        type="number"
+        min="0"
+        matInput
+        formControlName="id"
+        required="true" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Vendor Name</mat-label>
+      <input type="text" matInput formControlName="name" required="true" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Vendor address</mat-label>
+      <input type="text" matInput formControlName="address" required="true" />
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button type="submit" [disabled]="vendorForm.invalid">
+      Save
+    </button>
+    <button mat-button type="reset" mat-dialog-close (click)="onCancel()">
+      Cancel
+    </button>
+  </div>
+</form>

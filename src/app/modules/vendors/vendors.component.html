@@ -1,0 +1,12 @@
+<router-outlet></router-outlet>
+<ng-container *ngIf="vendors$ | async">
+  <div class="container">
+    <mat-card
+      *ngFor="let vendor of vendors$ | async"
+      [routerLink]="'/vendors/' + vendor.id">
+      <mat-card-header>
+        {{ vendor.name }}
+      </mat-card-header>
+    </mat-card>
+  </div>
+</ng-container>

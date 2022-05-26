@@ -24,9 +24,11 @@ export class AppComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.invoiceService.getInvoiceList().subscribe(data => {
-      this.localStore.setData('invoices', JSON.stringify(data));
-    });
+    this.invoiceService
+      .getInvoiceList()
+      .subscribe(data =>
+        this.localStore.setData('invoices', JSON.stringify(data))
+      );
 
     this.vendorService
       .getVendorList()
