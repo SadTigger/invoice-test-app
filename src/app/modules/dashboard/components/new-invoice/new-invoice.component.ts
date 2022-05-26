@@ -20,7 +20,7 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 export class NewInvoiceComponent implements OnInit {
   invoiceForm!: FormGroup;
 
-  vendorList$ = this.vendorService.getVendorList();
+  vendorList$ = this.vendorService.getVendorListSubj();
 
   vendorList = this.localStore.getData('vendors');
 

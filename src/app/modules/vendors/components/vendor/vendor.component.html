@@ -1,0 +1,9 @@
+<ng-container *ngIf="vendorListener$ | async">
+  <p>Vendor id: {{ (vendorListener$ | async)?.id }}</p>
+  <p>Vendor name: {{ (vendorListener$ | async)?.name }}</p>
+  <p>Vendor address: {{ (vendorListener$ | async)?.address?.city }}</p>
+</ng-container>
+
+<ng-container *ngIf="isAdmin$ | async">
+  <button type="button" (click)="edit()">Edit</button>
+</ng-container>

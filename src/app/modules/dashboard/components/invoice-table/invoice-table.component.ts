@@ -15,10 +15,9 @@ import { InvoiceService } from 'src/app/services/invoice.service';
 import { VendorService } from 'src/app/services/vendor.service';
 import { InvoicePreviewComponent } from '../invoice-preview/invoice-preview.component';
 import { NewInvoiceComponent } from '../new-invoice/new-invoice.component';
-import { Subject, Observable } from 'rxjs';
-import { tap, takeUntil, take } from 'rxjs/operators';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/auth.service';
-
 @Component({
   selector: 'app-invoice-table',
   templateUrl: './invoice-table.component.html',
@@ -34,9 +33,7 @@ export class InvoiceTableComponent implements OnInit, OnDestroy {
 
   private destroy$ = new Subject();
 
-  vendorList$ = this.vendorService.getVendorList();
-
-  invoiceListSubj$!: Observable<Invoice[]>;
+  vendorList$ = this.vendorService.getVendorListSubj();
 
   displayedColumns: string[] = ['number', 'vendor', 'invoice_amount'];
 

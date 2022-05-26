@@ -1,6 +1,9 @@
 <mat-toolbar>
   <span>Invoicing App </span>
   <span class="spacer"></span>
+  <button type="button" [routerLink]="'invoices'">Invoices</button>
+  <button type="button" [routerLink]="'vendors'">Vendors</button>
+  <span class="spacer"></span>
   <ng-container *ngIf="isAdmin$ | async; else guest">
     <span>Greetings, Administrator.</span>
     <button type="button" mat-icon-button (click)="settings()">
